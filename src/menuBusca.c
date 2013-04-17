@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "hdr/menuPrincipal.h"
+#include "hdr/menuBusca.h"
+
+void escolhaMenuBusca(int option){
+	int id;
+
+	system("clear");
+	switch(option){
+		case 1:
+			printf("*** Busca de Espécie ***\n\n");
+			printf("ID: ");
+			scanf("%d",&id);
+			//buscarEspecie(id);
+			printf("Espécie buscada com Sucesso. ENTER para continuar.");
+			while (getchar()!='\n');
+			system("clear");
+			break;
+		case 2:
+			printf("*** Busca de Indivíduo ***\n\n");
+			printf("ID: ");
+			scanf("%d",&id);
+			//buscarIndividuo(id);
+			printf("Indivíduo buscado com Sucesso. ENTER para continuar.");
+			while (getchar()!='\n');
+			system("clear");
+			break;
+		case 3:
+			printf("*** Busca de Captura ***\n\n");
+			printf("ID: ");
+			scanf("%d",&id);
+			//buscarCaptura(id);
+			printf("Captura buscada com Sucesso. ENTER para continuar.");
+			while (getchar()!='\n');
+			system("clear");
+			break;
+		case 0:
+			printf("Voltando... \n");
+			mostraMenuPrincipal();
+			break;
+		default:
+			printf("Opção invalida, digite novamente... \n");
+			break;
+	}
+}
+
+void mostraMenuBusca(){
+	int opcao;
+	
+	system("clear");
+	while (opcao!=0){
+		opcao=-1;
+		printf("Escolha uma opção de busca: ");
+		printf("\n1 - Espécie");
+		printf("\n2 - Indivíduo");
+		printf("\n3 - Captura");
+		printf("\n0 - VOLTAR");
+		printf("Opção: ");
+		scanf("%d", &opcao);
+		escolhaMenuPrincipal(opcao);
+	}
+}

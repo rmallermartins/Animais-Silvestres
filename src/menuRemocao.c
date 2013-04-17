@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "hdr/menuPrincipal.h"
+#include "hdr/menuRemocao.h"
+
+void escolhaMenuRemocao(int option){
+	int id;
+	
+	system("clear");
+	switch(option){
+		case 1:
+			printf("*** Remoçao de Espécie ***\n\n");
+			printf("ID: ");
+			scanf("%d",&id);
+			//removerEspecie(id);
+			printf("Espécie removida com Sucesso. ENTER para continuar.");
+			while (getchar()!='\n');
+			system("clear");
+			break;
+		case 2:
+			printf("*** Remoção de Indivíduo ***\n\n");
+			printf("ID: ");
+			scanf("%d",&id);
+			//removerIndividuo(id);
+			printf("Indivíduo removido com Sucesso. ENTER para continuar.");
+			while (getchar()!='\n');
+			system("clear");
+			break;
+		case 3:
+			printf("*** Remoçao de Captura ***\n\n");
+			printf("ID: ");
+			scanf("%d",&id);
+			//removerCaptura(id);
+			printf("Captura removida com Sucesso. ENTER para continuar.");
+			while (getchar()!='\n');
+			system("clear");
+			break;
+		case 0:
+			printf("Voltando... \n");
+			mostraMenuPrincipal();
+			break;
+		default:
+			printf("Opção invalida, digite novamente... \n");
+			break;
+	}
+}
+
+void mostraMenuRemocao(){
+	int opcao;
+	
+	system("clear");
+	while (opcao!=0){
+		opcao=-1;
+		printf("Escolha uma opção de remoção: ");
+		printf("\n1 - Espécie");
+		printf("\n2 - Indivíduo");
+		printf("\n3 - Captura");
+		printf("\n0 - VOLTAR");
+		printf("Opção: ");
+		scanf("%d", &opcao);
+		escolhaMenuPrincipal(opcao);
+	}
+}

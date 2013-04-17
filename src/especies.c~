@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include "hrd/especies.h"
+
+void inserirEspecie () {
+	
+}

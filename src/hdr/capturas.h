@@ -1,0 +1,4 @@
+#ifndef CAPTURAS_H
+#define CAPTURAS_H
+
+#endif

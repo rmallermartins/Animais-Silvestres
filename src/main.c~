@@ -1,0 +1,5 @@
+#include "hdr/menuPrincipal.h"
+
+int main(){
+	mostraMenuPrincipal();
+}
