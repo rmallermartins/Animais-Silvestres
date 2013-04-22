@@ -3,42 +3,38 @@
 #include <string.h>
 #include "hdr/menuPrincipal.h"
 #include "hdr/menuRemocao.h"
+#include "hdr/especies.h"
+#include "hdr/capturas.h"
+#include "hdr/individuos.h"
 
 void escolhaMenuRemocao(int option){
-	int id;
-	
 	system("clear");
 	switch(option){
 		case 1:
 			printf("*** Remoçao de Espécie ***\n\n");
-			printf("ID: ");
-			scanf("%d",&id);
-			//removerEspecie(id);
-			printf("Espécie removida com Sucesso. ENTER para continuar.");
+			removerEspecie();
+			getchar();
+			printf("\nENTER para continuar.");
 			while (getchar()!='\n');
 			system("clear");
 			break;
 		case 2:
 			printf("*** Remoção de Indivíduo ***\n\n");
-			printf("ID: ");
-			scanf("%d",&id);
-			//removerIndividuo(id);
-			printf("Indivíduo removido com Sucesso. ENTER para continuar.");
+			removerIndividuo();
+			getchar();
+			printf("\nENTER para continuar.");
 			while (getchar()!='\n');
 			system("clear");
 			break;
 		case 3:
 			printf("*** Remoçao de Captura ***\n\n");
-			printf("ID: ");
-			scanf("%d",&id);
-			//removerCaptura(id);
-			printf("Captura removida com Sucesso. ENTER para continuar.");
+			removerCaptura();
+			getchar();
+			printf("\nENTER para continuar.");
 			while (getchar()!='\n');
 			system("clear");
 			break;
-		case 0:
-			printf("Voltando... \n");
-			mostraMenuPrincipal();
+		case 0:	
 			break;
 		default:
 			printf("Opção invalida, digite novamente... \n");
@@ -47,17 +43,17 @@ void escolhaMenuRemocao(int option){
 }
 
 void mostraMenuRemocao(){
-	int opcao;
-	
+	int opcao = -1;
+
 	system("clear");
 	while (opcao!=0){
-		opcao=-1;
-		printf("Escolha uma opção de remoção: ");
+		opcao = -1;
+		printf("\nEscolha uma opção de remoção: ");
 		printf("\n1 - Espécie");
 		printf("\n2 - Indivíduo");
 		printf("\n3 - Captura");
 		printf("\n0 - VOLTAR");
-		printf("Opção: ");
+		printf("\nOpção: ");
 		scanf("%d", &opcao);
 		escolhaMenuPrincipal(opcao);
 	}
